@@ -1,0 +1,2 @@
+ninja: Entering directory `/Users/wecut1260/develop_workspace/android/OpenCVLearning/opencv_sdk/.cxx/cmake/debug/armeabi-v7a'
+ninja: no work to do.

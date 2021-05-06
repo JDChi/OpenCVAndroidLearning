@@ -1,0 +1,1 @@
+/Users/wecut1260/Downloads/OpenCV-android-sdk/sdk/native/jni/OpenCV.mk

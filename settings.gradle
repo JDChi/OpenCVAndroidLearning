@@ -1,0 +1,3 @@
+rootProject.name = "OpenCVLearning"
+include ':app'
+include ':opencv_sdk'

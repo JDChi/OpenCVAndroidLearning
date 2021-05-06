@@ -1,0 +1,19 @@
+                    Executable : /Users/wecut1260/Library/Android/sdk/ndk/21.4.7075529/ndk-build
+arguments : 
+NDK_PROJECT_PATH=null
+APP_BUILD_SCRIPT=/Users/wecut1260/Downloads/OpenCV-android-sdk/sdk/native/jni/OpenCV.mk
+APP_ABI=x86
+NDK_ALL_ABIS=x86
+NDK_DEBUG=1
+APP_PLATFORM=android-23
+NDK_OUT=/Users/wecut1260/develop_workspace/android/OpenCVLearning/app/build/intermediates/ndkBuild/debug/obj
+NDK_LIBS_OUT=/Users/wecut1260/develop_workspace/android/OpenCVLearning/app/build/intermediates/ndkBuild/debug/lib
+APP_SHORT_COMMANDS=false
+LOCAL_SHORT_COMMANDS=false
+-B
+-n
+jvmArgs : 
+
+
+                    Build command args: []
+                    Version: 1
