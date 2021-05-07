@@ -10,6 +10,7 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import com.example.opencvlearning.demo.HelloOpenCVSampleActivity;
 import com.example.opencvlearning.demo.image_processing.BasicDrawingActivity;
+import com.example.opencvlearning.demo.image_processing.SmoothingImagesActivity;
 import com.permissionx.guolindev.PermissionCollection;
 import com.permissionx.guolindev.PermissionX;
 import com.permissionx.guolindev.callback.ExplainReasonCallback;
@@ -21,6 +22,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private AppCompatButton helloButton;
     private AppCompatButton basicDrawingButton;
+    private AppCompatButton smoothingButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,13 +33,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         helloButton.setOnClickListener(this);
         basicDrawingButton = findViewById(R.id.bt_basic_drawing);
         basicDrawingButton.setOnClickListener(this);
+        smoothingButton = findViewById(R.id.bt_smoothing_image);
+        smoothingButton.setOnClickListener(this);
 
         requestPermissions();
     }
 
     private void requestPermissions() {
         PermissionCollection permissionCollection = PermissionX.init(this);
-        permissionCollection.permissions(Manifest.permission.CAMERA)
+        permissionCollection.permissions(Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE)
                 .onExplainRequestReason((scope, deniedList) ->
                         scope.showRequestReasonDialog(deniedList, "Core fundamental are based on these permissions", "Ok", "Cancel")).request(new RequestCallback() {
             @Override
@@ -55,6 +59,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.bt_basic_drawing:
                 startActivity(new Intent(this, BasicDrawingActivity.class));
+                break;
+            case R.id.bt_smoothing_image:
+                startActivity(new Intent(this, SmoothingImagesActivity.class));
                 break;
         }
     }

@@ -10,8 +10,8 @@ import org.opencv.core.*
 import org.opencv.imgproc.Imgproc
 
 class BasicDrawingActivity : AppCompatActivity() {
-    private lateinit var iv1: AppCompatImageView;
-    private lateinit var iv2: AppCompatImageView;
+    private lateinit var iv1: AppCompatImageView
+    private lateinit var iv2: AppCompatImageView
 
     companion object {
         private const val intW: Int = 400

@@ -45,7 +45,9 @@ dependencies {
     implementation "androidx.core:core-ktx:+"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.permissionx.guolindev:permissionx:1.4.0'
+    implementation 'com.github.dhaval2404:imagepicker:1.8'
 }
 repositories {
     mavenCentral()
+    maven { url "https://jitpack.io" }
 }
