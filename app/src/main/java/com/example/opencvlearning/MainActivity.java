@@ -1,51 +1,32 @@
 package com.example.opencvlearning;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.SurfaceView;
-import android.view.WindowManager;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
-import org.opencv.android.CameraBridgeViewBase;
-import org.opencv.core.Mat;
+import com.example.opencvlearning.demo.HelloOpenCVSampleActivity;
 
-public class MainActivity extends AppCompatActivity implements CameraBridgeViewBase.CvCameraViewListener2 {
-    private CameraBridgeViewBase mOpenCvCameraView;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    private AppCompatButton helloButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
         setContentView(R.layout.activity_main);
-
-        mOpenCvCameraView = findViewById(R.id.HelloOpenCvView);
-        mOpenCvCameraView.setCameraPermissionGranted();
-        mOpenCvCameraView.setVisibility(SurfaceView.VISIBLE);
-        mOpenCvCameraView.setCvCameraViewListener(this);
-        mOpenCvCameraView.enableView();
-    }
-
-    public void onCameraViewStarted(int width, int height) {
-    }
-
-    public void onCameraViewStopped() {
+        helloButton = findViewById(R.id.bt_hello);
+        helloButton.setOnClickListener(this);
     }
 
     @Override
-    public Mat onCameraFrame(CameraBridgeViewBase.CvCameraViewFrame inputFrame) {
-        return inputFrame.rgba();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        if (mOpenCvCameraView != null)
-            mOpenCvCameraView.disableView();
-    }
-
-    public void onDestroy() {
-        super.onDestroy();
-        if (mOpenCvCameraView != null)
-            mOpenCvCameraView.disableView();
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.bt_hello:
+                startActivity(new Intent(this, HelloOpenCVSampleActivity.class));
+                break;
+        }
     }
 }
