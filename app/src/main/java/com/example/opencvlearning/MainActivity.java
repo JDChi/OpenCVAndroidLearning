@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import com.example.opencvlearning.demo.HelloOpenCVSampleActivity;
+import com.example.opencvlearning.demo.image_processing.BasicDrawingActivity;
 import com.permissionx.guolindev.PermissionCollection;
 import com.permissionx.guolindev.PermissionX;
 import com.permissionx.guolindev.callback.ExplainReasonCallback;
@@ -19,6 +20,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private AppCompatButton helloButton;
+    private AppCompatButton basicDrawingButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         helloButton = findViewById(R.id.bt_hello);
         helloButton.setOnClickListener(this);
+        basicDrawingButton = findViewById(R.id.bt_basic_drawing);
+        basicDrawingButton.setOnClickListener(this);
 
         requestPermissions();
     }
@@ -48,6 +52,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             case R.id.bt_hello:
                 startActivity(new Intent(this, HelloOpenCVSampleActivity.class));
+                break;
+            case R.id.bt_basic_drawing:
+                startActivity(new Intent(this, BasicDrawingActivity.class));
                 break;
         }
     }

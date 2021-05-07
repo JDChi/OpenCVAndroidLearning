@@ -23,6 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".demo.HelloOpenCVSampleActivity"/>
+    <activity android:name=".demo.image_processing.BasicDrawingActivity"/>
     </application>
 
 </manifest>
