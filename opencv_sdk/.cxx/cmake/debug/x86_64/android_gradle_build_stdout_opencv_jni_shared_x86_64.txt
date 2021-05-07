@@ -1,2 +1,0 @@
-ninja: Entering directory `/Users/wecut1260/develop_workspace/android/OpenCVLearning/opencv_sdk/.cxx/cmake/debug/x86_64'
-ninja: no work to do.
